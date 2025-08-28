@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutting Machines Dossier</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  h1, h2, h3 { color: #2c3e50; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  th { background-color: #3498db; color: white; }
+  a { color: #2980b9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .machine-fiche { border: 1px solid #bdc3c7; padding: 10px; margin-bottom: 20px; border-radius: 5px; background-color: #ecf0f1; }
+  .toggle { cursor: pointer; color: #e74c3c; }
+  .hidden { display: none; }
+  .back-link { margin-top: 10px; display: inline-block; }
+</style>
+<script>
+function toggleFiche(id) {
+    const fiche = document.getElementById(id);
+    fiche.classList.toggle('hidden');
+}
+</script>
+</head>
+<body>
+
+<h1>Cutting Machines Dossier</h1>
+
+<h2>Inventory</h2>
+<table>
+  <tr>
+    <th>Family</th>
+    <th>Machine</th>
+    <th>Entity</th>
+    <th>Max Thickness</th>
+    <th>Process Type</th>
+    <th>Risk Level</th>
+  </tr>
+  <tr>
+    <td>Hot Cutting</td>
+    <td><a href="#plasma-cutter">Plasma Cutter</a></td>
+    <td>CSW</td>
+    <td>50 mm</td>
+    <td>Plasma</td>
+    <td>Medium</td>
+  </tr>
+  <tr>
+    <td>Hot Cutting</td>
+    <td><a href="#lance-O2">Lance O2 Cutter</a></td>
+    <td>CFR</td>
+    <td>100 mm</td>
+    <td>Lance 02</td>
+    <td>Low</td>
+  </tr>
+  <tr>
+    <td>Hot Cutting</td>
+    <td><a href="#oxy-fuel">Oxy-fuel</a></td>
+    <td>CSW</td>
+    <td>100 mm</td>
+    <td>oxy-fuel</td>
+    <td>Low</td>
+  </tr>
+  <tr>
+    <td>Hot Cutting</td>
+    <td><a href="#thermal-lance">Thermal Lance</a></td>
+    <td>CSW</td>
+    <td>100 mm</td>
+    <td>thermal lance</td>
+    <td>Low</td>
+  </tr>
+</table>
+
+<h2 id="csw">CSW Entity</h2>
+
+<h3 id="plasma-cutter">Plasma Cutter <span class="toggle" onclick="toggleFiche('plasma-fiche')">[>]</span></h3>
+<div id="plasma-fiche" class="machine-fiche hidden">
+  <strong>Family:</strong> Hot Cutting<br>
+  <strong>Description:</strong> High-speed plasma cutting of steel plates.<br>
+  <strong>Usage Constraints:</strong>
+  <ul>
+    <li>Installation: Dedicated hot-cutting area, min clearance 2m</li>
+    <li>Process: Max thickness 50 mm, slag produced</li>
+    <li>Personnel: 2 trained operators, PPE required</li>
+  </ul>
+  <strong>Safety & REX:</strong> Occasional overheating; fire hazard from residual oils.<br>
+  <strong>Recommendations:</strong> Check cooling system, clean surfaces before cutting.<br>
+  <strong>Quick Reference:</strong>
+  <table>
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Max Thickness</td><td>50 mm</td></tr>
+    <tr><td>Cutting Speed</td><td>500 mm/min</td></tr>
+    <tr><td>Energy Use</td><td>15 kW</td></tr>
+    <tr><td>Waste Type</td><td>Slag, Metal Dust</td></tr>
+  </table>
+  <a href="#csw" class="back-link">Back to CSW</a>
+</div>
+
+<h3 id="thermal-lance">Thermal Lance <span class="toggle" onclick="toggleFiche('thermal-fiche')">[>]</span></h3>
+<div id="thermal-fiche" class="machine-fiche hidden">
+  <strong>Family:</strong> Hot Cutting<br>
+  <strong>Description:</strong> Manual thermal lance for large pieces.<br>
+  <strong>Usage Constraints:</strong>
+  <ul>
+    <li>Installation: Open area with fireproof floor</li>
+    <li>Process: Up to 200 mm thickness</li>
+    <li>Personnel: 1 operator, PPE required</li>
+  </ul>
+  <strong>Safety & REX:</strong> High-temperature sparks; risk of burns.<br>
+  <strong>Recommendations:</strong> Use in controlled environment, maintain distance from other equipment.<br>
+  <strong>Quick Reference:</strong>
+  <table>
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Max Thickness</td><td>200 mm</td></tr>
+    <tr><td>Cutting Speed</td><td>300 mm/min</td></tr>
+    <tr><td>Energy Use</td><td>N/A</td></tr>
+    <tr><td>Waste Type</td><td>Metal Dust, Sparks</td></tr>
+  </table>
+  <a href="#csw" class="back-link">Back to CSW</a>
+</div>
+
+<h3 id="oxy-fuel">Oxy-fuel <span class="toggle" onclick="toggleFiche('oxy-fuel-fiche')">[>]</span></h3>
+<div id="oxy-fuel-fiche" class="machine-fiche hidden">
+  <strong>Family:</strong> Hot Cutting<br>
+  <strong>Description:</strong> Manual cutting torch, hoses and gastanks.<br>
+  <strong>Usage Constraints:</strong>
+  <ul>
+    <li>Installation: Open area with fireproof floor</li>
+    <li>Process: Up to 200 mm thickness</li>
+    <li>Personnel: 1 operator, PPE required</li>
+  </ul>
+  <strong>Safety & REX:</strong> High-temperature sparks; risk of burns.<br>
+  <strong>Recommendations:</strong> Use in controlled environment, maintain distance from other equipment.<br>
+  <strong>Quick Reference:</strong>
+  <table>
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Max Thickness</td><td>200 mm</td></tr>
+    <tr><td>Cutting Speed</td><td>300 mm/min</td></tr>
+    <tr><td>Energy Use</td><td>N/A</td></tr>
+    <tr><td>Waste Type</td><td>Metal Dust, Sparks</td></tr>
+  </table>
+  <a href="#csw" class="back-link">Back to CSW</a>
+</div>
+
+<h2 id="CFR">CFR Entity</h2>
+
+<h3 id="Lance O2">Lance O2 Cutter <span class="toggle" onclick="toggleFiche('Lance O2-fiche')">[>]</span></h3>
+<div id="Lance O2-fiche" class="machine-fiche hidden">
+  <strong>Family:</strong> Hot Cutting<br>
+  <strong>Description:</strong> High-pressure Lance O2 cutting for thick metals.<br>
+  <strong>Usage Constraints:</strong>
+  <ul>
+    <li>Installation: Stable base, O2 gas</li>
+    <li>Process: Max thickness 100 mm</li>
+    <li>Personnel: 1 trained operator</li>
+  </ul>
+  <strong>Safety & REX:</strong> insufficient pressure.<br>
+  <strong>Recommendations:</strong> Regular maintenance, ensure PPE.<br>
+  <strong>Quick Reference:</strong>
+  <table>
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Max Thickness</td><td>100 mm</td></tr>
+    <tr><td>Cutting Speed</td><td>200 mm/min</td></tr>
+    <tr><td>Energy Use</td><td>12 kW</td></tr>
+    <tr><td>Waste Type</td><td>Molten metal</td></tr>
+  </table>
+  <a href="#CFR" class="back-link">Back to CFR</a>
+</div>
+
+</body>
+</html>
